@@ -37,14 +37,14 @@
 
 
 
-                <tbody>
+                <tbody class="tbody">
                 <c:forEach var="board" items="${list}">
-                    <tr>
-                        <th><c:out value="${board.bno}"/></th>
-                        <th><c:out value="${board.title}"/></th>
-                        <th><c:out value="${board.writer}"/></th>
-                        <th><c:out value="${board.regDate}"/></th>
-                        <th><c:out value="${board.updateDate}"/></th>
+                    <tr data-bno="${board.bno}">
+                        <td><c:out value="${board.bno}"/></td>
+                        <td><c:out value="${board.title}"/></td>
+                        <td><c:out value="${board.writer}"/></td>
+                        <td><c:out value="${board.regDate}"/></td>
+                        <td><c:out value="${board.updateDate}"/></td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -52,9 +52,49 @@
         </div>
     </div>
 </div>
+
+<div id="myModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <%@ include file="../includes/footer.jsp"%>
 
 <script>
+
+    const result = '${result}'
+
+    const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+
+    console.log(myModal);
+
+    if(result){
+        myModal.show();
+    }
+
+    document.querySelector('.tbody').addEventListener("click", (e) => {
+        const target = e.target.closest('tr');
+
+        const bno = target.dataset.bno;
+
+        window.location = `/board/read/\${bno}`
+
+    }, false);
 
 </script>
 

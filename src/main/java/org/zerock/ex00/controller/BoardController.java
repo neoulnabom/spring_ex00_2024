@@ -35,7 +35,7 @@ public class BoardController {
 
     @GetMapping("/{job}/{bno}")
     public String read(
-            @PathVariable(name = "bno") String job,
+            @PathVariable(name = "job") String job,
             @PathVariable(name = "bno") Long bno, Model model) {
         log.info("job : " + job);
         log.info("bno : " + bno);
