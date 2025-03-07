@@ -36,6 +36,12 @@
         <input type="text" name="writer" class="form-control">
       </div>
       <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >RegDate</span>
+        </div>
+        <input type="text" name="writer" class="form-control">
+      </div>
+      <div class="input-group input-group-lg">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>

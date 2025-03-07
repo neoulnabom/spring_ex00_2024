@@ -41,9 +41,14 @@
             <input type="text" name="writer" class="form-control" value="<c:out value="${vo.writer}"/>" readonly>
         </div>
         <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text" >RegDate</span>
+            </div>
+            <input type="text" name="writer" class="form-control" value="<c:out value="${vo.writer}"/>" readonly>
+        </div>
+        <div class="input-group input-group-lg">
             <button type="submit" class="btn btn-info btnList">LIST</button>
             <button type="submit" class="btn btn-warning btnModify">MODIFY</button>
-            <button type="submit" class="btn btn-info">DELETE</button>
         </div>
     </div>
 </div>
